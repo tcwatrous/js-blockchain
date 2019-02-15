@@ -19,16 +19,10 @@ class Block {
     for(let i = 0; i < difficulty ; i++){
       difficultyStr+="0"
     }
-    console.log(difficultyStr);
     while(!(this.hash.substring(0,difficulty) === difficultyStr)){
       this.nonce = this.generateNonce();
       this.hash = this.calculateHash();
-      console.log("nonce: " + this.nonce);
-      console.log("hash: " + this.hash);
     }
-    console.log("final nonce: " + this.nonce);
-    console.log("final hash: " + this.hash);
-    console.log("final hash calc: " + this.calculateHash());
   }
 
   generateNonce() {
